@@ -1,0 +1,18 @@
+using System;
+using MySql.Data.MySqlClient;
+
+namespace PDbPrueba
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			Console.WriteLine ("Hello World!");
+
+			MySqlConnection mySqlConnection = new MySqlConnection ("Database=dbprueba;User Id=root;Password=sistemas");
+			mySqlConnection.Open ();
+			//Operaciones...
+			mySqlConnection.Close ();
+		}
+	}
+}
