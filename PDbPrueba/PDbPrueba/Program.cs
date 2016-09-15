@@ -7,17 +7,31 @@ namespace PDbPrueba
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Probando dbprueba");
+//			Console.WriteLine ("Probando dbprueba");
+//
+//			MySqlConnection mySqlConnection = new MySqlConnection (
+//				"Database=dbprueba;User Id=root;Password=sistemas"
+//			);
+//
+//			mySqlConnection.Open ();
+//
+//			//operaciones...
+//
+//			mySqlConnection.Close ();
 
-			MySqlConnection mySqlConnection = new MySqlConnection (
-				"Database=dbprueba;User Id=root;Password=sistemas"
-			);
+			readLong ("Introduce el id: ");
+		}
 
-			mySqlConnection.Open ();
-
-			//operaciones...
-
-			mySqlConnection.Close ();
+		private static long readLong(string label) {
+			while (true) {
+				Console.Write (label);
+				string data = Console.ReadLine ();
+				try {
+					return long.Parse (data);
+				} catch {
+					Console.WriteLine ("Sólo números, por favor. Vuelve a introducir");
+				}
+			}
 		}
 	}
 }
