@@ -9,11 +9,18 @@ namespace PDbPrueba
 		public static void Main (string[] args)
 		{
 			IDbConnection dbConnection = new MySqlConnection ("Database=dbprueba;User Id=root;Password=sistemas");
+			IDbCommand dbCommand = dbConnection.CreateCommand ();
+			IDbDataParameter dbDataParameter = dbCommand.CreateParameter ();
+			IDbDataParameter dbDataParameter2 = dbCommand.CreateParameter ();
 			dbConnection.Open ();
 			//Operaciones...
-			IDbCommand dbCommand = dbConnection.CreateCommand ();
+
 			IDataReader dataReader; 
 			String cat;
+			String catmod;
+			String idmod;
+			int idint;
+			String iddel;
 			do{
 				Console.WriteLine ("Probando Dbprueba");
 				Console.WriteLine ("------------------------");
@@ -28,13 +35,13 @@ namespace PDbPrueba
 			switch (opcion) {
 			case '1':
 				dbCommand.CommandText = "insert into categoria (nombre) values (@nombre)";
-				IDbDataParameter dbDataParameter = dbCommand.CreateParameter ();
 				dbDataParameter.ParameterName = "nombre";
 				Console.WriteLine ("Introduzca una categoria");
 				cat = Console.ReadLine ();
 				dbDataParameter.Value = cat;
 				dbCommand.Parameters.Add (dbDataParameter);
 				dbCommand.ExecuteNonQuery ();
+				dbCommand.Dispose();
 			break;
 			case '2':
 					dbCommand.CommandText = "select * from categoria";
@@ -49,12 +56,29 @@ namespace PDbPrueba
 					}
 					dataReader.Close();
 					Console.WriteLine ("Introduzca una categoria");
-					String catmod = Console.ReadLine ();
+					catmod = Console.ReadLine ();
 					Console.WriteLine ("Introduzca el ID");
-					String idmod = Console.ReadLine ();
-					int idint = int.Parse (idmod);
-
-
+					idmod = Console.ReadLine ();
+					idint = int.Parse (idmod);
+					dbCommand.CommandText = "update categoria set nombre =(@nombre) where id =(@id)";
+					dbDataParameter.ParameterName = "nombre";
+					dbDataParameter.Value = catmod;
+					dbDataParameter2.ParameterName = "id";
+					dbDataParameter2.Value = idint;
+					dbCommand.Parameters.Add (dbDataParameter);
+					dbCommand.Parameters.Add (dbDataParameter2);
+					dbCommand.ExecuteNonQuery();
+					dbCommand.Dispose();
+			break;
+			case '3':
+					dbCommand.CommandText = "delete from categoria where id=@iddel";
+					dbDataParameter.ParameterName = "iddel";
+					Console.WriteLine ("Introduzca ID a eliminar");
+					iddel = Console.ReadLine ();
+					dbDataParameter.Value = iddel;
+					dbCommand.Parameters.Add (dbDataParameter);
+					dbCommand.ExecuteNonQuery ();
+					dbCommand.Dispose();
 			break;
 			case '4':
 
@@ -72,6 +96,7 @@ namespace PDbPrueba
 				break;
 			case '0':
 				dbConnection.Close ();
+				dbCommand.Dispose();
 				dbConnection=null;
 				break;
 				
