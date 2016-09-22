@@ -34,6 +34,7 @@ namespace PDbPrueba
 				int opcion = Console.Read ();
 			switch (opcion) {
 			case '1':
+				Console.Clear();
 				dbCommand.CommandText = "insert into categoria (nombre) values (@nombre)";
 				dbDataParameter.ParameterName = "nombre";
 				Console.WriteLine ("Introduzca una categoria");
@@ -44,6 +45,7 @@ namespace PDbPrueba
 				dbCommand.Dispose();
 			break;
 			case '2':
+					Console.Clear();
 					dbCommand.CommandText = "select * from categoria";
 					dataReader = dbCommand.ExecuteReader ();
 					Console.WriteLine ("");
@@ -71,6 +73,7 @@ namespace PDbPrueba
 					dbCommand.Dispose();
 			break;
 			case '3':
+					Console.Clear();
 					dbCommand.CommandText = "delete from categoria where id=@iddel";
 					dbDataParameter.ParameterName = "iddel";
 					Console.WriteLine ("Introduzca ID a eliminar");
@@ -81,7 +84,7 @@ namespace PDbPrueba
 					dbCommand.Dispose();
 			break;
 			case '4':
-
+				Console.Clear();
 				dbCommand.CommandText = "select * from categoria";
 				dataReader = dbCommand.ExecuteReader ();
 				Console.WriteLine ("");
@@ -95,6 +98,7 @@ namespace PDbPrueba
 				dataReader.Close();
 				break;
 			case '0':
+				Console.Clear();
 				dbConnection.Close ();
 				dbCommand.Dispose();
 				dbConnection=null;
