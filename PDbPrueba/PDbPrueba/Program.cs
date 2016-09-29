@@ -22,7 +22,6 @@ namespace PDbPrueba
 			int idint;
 			String iddel;
 			do{
-				Console.WriteLine ("Probando Dbprueba");
 				Console.WriteLine ("------------------------");
 				Console.WriteLine ("Seleccione una opcion");
 				Console.WriteLine ("------------------------");
@@ -48,7 +47,6 @@ namespace PDbPrueba
 					Console.Clear();
 					dbCommand.CommandText = "select * from categoria";
 					dataReader = dbCommand.ExecuteReader ();
-					Console.WriteLine ("");
 					Console.WriteLine ("-----------------------");
 					while (dataReader.Read()) {
 
@@ -87,7 +85,6 @@ namespace PDbPrueba
 				Console.Clear();
 				dbCommand.CommandText = "select * from categoria";
 				dataReader = dbCommand.ExecuteReader ();
-				Console.WriteLine ("");
 				Console.WriteLine ("-----------------------");
 				while (dataReader.Read()) {
 
