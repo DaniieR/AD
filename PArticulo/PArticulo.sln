@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PArticulo", "PArticulo\PArticulo.csproj", "{26B72141-2D62-48E4-B93C-B5019F90C0CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.InstitutoSerpis.Ad", "Org.InstitutoSerpis.Ad\Org.InstitutoSerpis.Ad.csproj", "{21521688-4C09-404C-9E98-0EFC249E6415}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21521688-4C09-404C-9E98-0EFC249E6415}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21521688-4C09-404C-9E98-0EFC249E6415}.Debug|x86.Build.0 = Debug|Any CPU
+		{21521688-4C09-404C-9E98-0EFC249E6415}.Release|x86.ActiveCfg = Release|Any CPU
+		{21521688-4C09-404C-9E98-0EFC249E6415}.Release|x86.Build.0 = Release|Any CPU
 		{26B72141-2D62-48E4-B93C-B5019F90C0CE}.Debug|x86.ActiveCfg = Debug|x86
 		{26B72141-2D62-48E4-B93C-B5019F90C0CE}.Debug|x86.Build.0 = Debug|x86
 		{26B72141-2D62-48E4-B93C-B5019F90C0CE}.Release|x86.ActiveCfg = Release|x86
