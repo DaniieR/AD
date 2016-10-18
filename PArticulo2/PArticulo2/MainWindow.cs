@@ -16,6 +16,24 @@ public partial class MainWindow: Gtk.Window
 		dbConnection = new MySqlConnection ("Database=dbprueba;User Id=root; Password=sistemas");
 		dbConnection.Open ();
 
+		fill ();
+
+		treeview1.Selection.Changed += delegate {
+			bool selected = treeview1.Selection.CountSelectedRows() > 0;
+			editAction.Sensitive = selected;
+			deleteAction.Sensitive = selected;
+		};
+
+		refreshAction.Activated += delegate {
+			fill();
+		};
+
+		newAction.Activated += delegate {
+			new ArticuloView();
+		};
+	}
+	private void fill(){
+	
 		List <Articulo> list = new List<Articulo>();
 		//TODO rellenar desde la tabla articulo
 		string selectSql = "select * from articulo";
@@ -29,9 +47,15 @@ public partial class MainWindow: Gtk.Window
 			long? categoria = dataReader ["categoria"] is DBNull ? null : (long?) dataReader ["categoria"];
 			Articulo articulo = new Articulo(id, nombre, precio, categoria);
 			list.Add (articulo);
-				}
+		}
 		dataReader.Close ();
+
+		editAction.Sensitive = false;
+		deleteAction.Sensitive = false;
+
 		TreeViewHelper.Fill (treeview1, list);
+
+	
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
