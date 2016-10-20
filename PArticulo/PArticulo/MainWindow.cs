@@ -18,6 +18,27 @@ public partial class MainWindow: Gtk.Window
 		);
 		dbConnection.Open ();
 
+		fill ();
+
+		treeView.Selection.Changed += delegate {
+			bool selected = treeView.Selection.CountSelectedRows() > 0;
+			editAction.Sensitive = selected;
+			deleteAction.Sensitive = selected;
+		};
+
+		newAction.Activated += delegate {
+			new ArticuloView();
+		};
+
+
+		refreshAction.Activated += delegate {
+			fill();
+		};
+
+		new ArticuloView ();
+	}
+
+	private void fill() {
 		List<Articulo> list = new List<Articulo>();
 		string selectSql = "select * from articulo";
 		IDbCommand dbCommand = dbConnection.CreateCommand ();
@@ -32,6 +53,9 @@ public partial class MainWindow: Gtk.Window
 			list.Add (articulo);
 		}
 		dataReader.Close ();
+
+		editAction.Sensitive = false;
+		deleteAction.Sensitive = false;
 
 		TreeViewHelper.Fill (treeView, list);
 	}
