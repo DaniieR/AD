@@ -13,7 +13,9 @@ public partial class MainWindow: Gtk.Window
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
-		dbConnection = new MySqlConnection ("Database=dbprueba;User Id=root; Password=sistemas");
+		dbConnection = new MySqlConnection (
+			"Database=dbprueba;User Id=root;Password=sistemas"
+			);
 		dbConnection.Open ();
 
 		fill ();
@@ -24,18 +26,20 @@ public partial class MainWindow: Gtk.Window
 			deleteAction.Sensitive = selected;
 		};
 
+		newAction.Activated += delegate {
+			new ArticuloView();
+		};
+
+
 		refreshAction.Activated += delegate {
 			fill();
 		};
 
-		newAction.Activated += delegate {
-			new ArticuloView();
-		};
+		new ArticuloView ();
 	}
-	private void fill(){
-	
-		List <Articulo> list = new List<Articulo>();
-		//TODO rellenar desde la tabla articulo
+
+	private void fill() {
+		List<Articulo> list = new List<Articulo>();
 		string selectSql = "select * from articulo";
 		IDbCommand dbCommand = dbConnection.CreateCommand ();
 		dbCommand.CommandText = selectSql;
@@ -43,8 +47,8 @@ public partial class MainWindow: Gtk.Window
 		while (dataReader.Read()) {
 			long id = (long)dataReader ["id"];
 			string nombre = (string)dataReader ["nombre"];
-			decimal? precio = dataReader ["precio"] is DBNull ? null : (decimal?) dataReader ["precio"];
-			long? categoria = dataReader ["categoria"] is DBNull ? null : (long?) dataReader ["categoria"];
+			decimal? precio = dataReader ["precio"] is DBNull ? null : (decimal?)dataReader ["precio"];
+			long? categoria = dataReader["categoria"] is DBNull ? null : (long?)dataReader["categoria"];
 			Articulo articulo = new Articulo(id, nombre, precio, categoria);
 			list.Add (articulo);
 		}
@@ -54,8 +58,6 @@ public partial class MainWindow: Gtk.Window
 		deleteAction.Sensitive = false;
 
 		TreeViewHelper.Fill (treeview1, list);
-
-	
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
