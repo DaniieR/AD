@@ -18,20 +18,16 @@ namespace PArticulo
 				Console.WriteLine ("saveAction.Activated");
 				string nombre = entryNombre.Text;
 				decimal precio = (decimal)spinButtonPrecio.Value;
-				TreeIter treeIter; 
-				comboBoxCategoria.GetActiveIter(out treeIter);
-				object item = comboBoxCategoria.Model.GetValue(treeIter, 0);
-				object value = item == Null.Value ? null : (object)(((Categoria)item).Id);
-				Console.WriteLine ("value='{0}'", value);
-//				string insertSql = "insert into articulo (nombre, precio, categoria) " +
-//					"values (@nombre, @precio, @categoria)";
-//				string insertSql = "insert into articulo (nombre, precio) " +
-//					"values (@nombre, @precio)";
-//				IDbCommand dbCommand = App.Instance.DbConnection.CreateCommand();
-//				dbCommand.CommandText = insertSql;
-//				DbCommandHelper.AddParameter(dbCommand, "nombre", nombre);
-//				DbCommandHelper.AddParameter(dbCommand, "precio", precio);
-//				dbCommand.ExecuteNonQuery();
+				object categoria = ComboBoxHelper.GetId(comboBoxCategoria);
+				Console.WriteLine ("value='{0}'", categoria);
+				string insertSql = "insert into articulo (nombre, precio, categoria) " +
+					"values (@nombre, @precio, @categoria)";
+				IDbCommand dbCommand = App.Instance.DbConnection.CreateCommand();
+				dbCommand.CommandText = insertSql;
+				DbCommandHelper.AddParameter(dbCommand, "nombre", nombre);
+				DbCommandHelper.AddParameter(dbCommand, "precio", precio);
+				DbCommandHelper.AddParameter(dbCommand, "categoria", categoria);
+				dbCommand.ExecuteNonQuery();
 			};
 
 			entryNombre.Changed += delegate {
