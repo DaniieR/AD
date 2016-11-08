@@ -22,7 +22,7 @@ public partial class MainWindow: Gtk.Window
 		treeView.Selection.Changed += delegate {
 			bool selected = treeView.Selection.CountSelectedRows() > 0;
 			editAction.Sensitive = selected;
-			deleteAction.Sensitive = selected;
+			deleteAction.Sensitive = true;
 		};
 
 		newAction.Activated += delegate {
@@ -41,7 +41,7 @@ public partial class MainWindow: Gtk.Window
 			messageDialog.Destroy();
 			if (response != ResponseType.Yes)
 				return;
-			//TODO eliminar
+			ArticuloDao.Delete(TreeViewHelper.GetId(treeView));
 
 		};
 
@@ -50,7 +50,7 @@ public partial class MainWindow: Gtk.Window
 			fill();
 		};
 
-		new ArticuloView ();
+
 	}
 
 	private void fill() {
