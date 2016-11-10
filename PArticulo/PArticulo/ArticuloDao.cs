@@ -44,6 +44,7 @@ namespace PArticulo
 			dbCommand.CommandText = DELETE_SQL;
 			DbCommandHelper.AddParameter (dbCommand, "id", id);
 			dbCommand.ExecuteNonQuery ();
+			//TODO lanzar exception si no elimina ningún registro
 		}
 	}
 }

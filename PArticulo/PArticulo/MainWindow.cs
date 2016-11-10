@@ -22,7 +22,7 @@ public partial class MainWindow: Gtk.Window
 		treeView.Selection.Changed += delegate {
 			bool selected = treeView.Selection.CountSelectedRows() > 0;
 			editAction.Sensitive = selected;
-			deleteAction.Sensitive = true;
+			deleteAction.Sensitive = selected;
 		};
 
 		newAction.Activated += delegate {
@@ -30,19 +30,8 @@ public partial class MainWindow: Gtk.Window
 		};
 
 		deleteAction.Activated += delegate {
-			MessageDialog messageDialog = new MessageDialog(
-				this,
-				DialogFlags.Modal,
-				MessageType.Question,
-				ButtonsType.YesNo,
-				"¿Quieres eliminar el registro?"
-			);
-			ResponseType response = (ResponseType)messageDialog.Run();
-			messageDialog.Destroy();
-			if (response != ResponseType.Yes)
-				return;
-			ArticuloDao.Delete(TreeViewHelper.GetId(treeView));
-
+			if (WindowHelper.Confirm(this, "¿Quieres eliminarrrr el registro?"))
+				ArticuloDao.Delete(TreeViewHelper.GetId(treeView));
 		};
 
 
