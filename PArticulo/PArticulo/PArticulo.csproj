@@ -60,10 +60,10 @@
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="Org.InstitutoSerpis.Ad">
       <HintPath>..\..\Org.InstitutoSerpis.Ad\Org.InstitutoSerpis.Ad\bin\Debug\Org.InstitutoSerpis.Ad.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -79,7 +79,6 @@
     <Compile Include="Articulo.cs" />
     <Compile Include="ArticuloView.cs" />
     <Compile Include="gtk-gui\PArticulo.ArticuloView.cs" />
-    <Compile Include="DbCommandHelper.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="ArticuloDao.cs" />
     <Compile Include="CategoriaDao.cs" />
