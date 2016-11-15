@@ -5,7 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+<<<<<<< HEAD
     <ProjectGuid>{5220ABA6-C2E5-4DD4-B623-201BB7FA0184}</ProjectGuid>
+=======
+    <ProjectGuid>{733A6C54-2F6F-431C-BD38-76A978D0DA98}</ProjectGuid>
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
     <OutputType>Exe</OutputType>
     <RootNamespace>PDbPrueba</RootNamespace>
     <AssemblyName>PDbPrueba</AssemblyName>
@@ -32,10 +36,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+<<<<<<< HEAD
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+=======
+    <Reference Include="System.Data" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
+    </Reference>
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

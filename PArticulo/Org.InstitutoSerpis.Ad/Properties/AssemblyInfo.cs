@@ -3,16 +3,12 @@ using System.Runtime.CompilerServices;
 
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
-[assembly: AssemblyTitle ("PDbPrueba")]
+[assembly: AssemblyTitle ("Org.InstitutoSerpis.Ad")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("")]
-<<<<<<< HEAD
-[assembly: AssemblyCopyright ("luisvelasco")]
-=======
 [assembly: AssemblyCopyright ("mati")]
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".

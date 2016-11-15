@@ -16,11 +16,16 @@ namespace PCategoria
 		{
 			dbConnection = new MySqlConnection (
 				"Database=dbprueba;User Id=root;Password=sistemas"
+<<<<<<< HEAD
 			);
+=======
+				);
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 			dbConnection.Open ();
 			while (true) {
 				Option option = getOption ();
 				switch (option) {
+<<<<<<< HEAD
 				case Option.SALIR:
 					dbConnection.Close ();
 					return;
@@ -37,6 +42,25 @@ namespace PCategoria
 					listar ();
 					break;
 				}
+=======
+					case Option.SALIR:
+					dbConnection.Close ();
+					return;
+					case Option.NUEVO:
+					nuevo ();
+					break;
+					case Option.EDITAR:
+					editar ();
+					break;
+					case Option.BORRAR:
+					borrar ();
+					break;
+					case Option.LISTAR:
+					listar ();
+					break;
+				}
+
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 			}
 		}
 
@@ -47,12 +71,29 @@ namespace PCategoria
 			dbCommand.CommandText = INSERT_SQL;
 			addParameter (dbCommand, "nombre", nombre);
 			try {
+<<<<<<< HEAD
 				dbCommand.ExecuteNonQuery ();
 			} catch (MySqlException ex) {
 				Console.WriteLine (getUserMessage(ex));				
 			}
 		}
 
+=======
+				dbCommand.ExecuteNonQuery();
+			} catch (MySqlException ex) {
+				Console.WriteLine (getUserMessage(ex));
+			}
+		}
+		private const int ER_DUP_ENTRY = 1062;
+		private static string getUserMessage(MySqlException ex){
+			switch (ex.Number) {
+			case ER_DUP_ENTRY:
+				return "Dato Duplicado, Nombre duplicado";
+			default:
+				return "";
+			}
+		}
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 		private static string UPDATE_SQL = "update categoria set nombre=@nombre where id=@id";
 		private static void editar() {
 			long id = readLong ("Id: ");
@@ -62,11 +103,20 @@ namespace PCategoria
 			addParameter (dbCommand, "id", id);
 			addParameter (dbCommand, "nombre", nombre);
 			try {
+<<<<<<< HEAD
 				int filas = dbCommand.ExecuteNonQuery (); //devolverá 0 o 1
 				if (filas == 0)
 					Console.WriteLine ("Id no existente. No existe ningún registro con ese Id.");
 			} catch (MySqlException ex) {
 				Console.WriteLine (getUserMessage(ex));				
+=======
+			int filas = dbCommand.ExecuteNonQuery ();
+			if (filas == 0)
+					Console.WriteLine("No existe ningun registro con ese id");
+			}
+			catch (MySqlException ex){
+				Console.WriteLine (getUserMessage(ex));
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 			}
 		}
 
@@ -76,16 +126,27 @@ namespace PCategoria
 			IDbCommand dbCommand = dbConnection.CreateCommand ();
 			dbCommand.CommandText = DELETE_SQL;
 			addParameter (dbCommand, "id", id);
+<<<<<<< HEAD
 			int filas = dbCommand.ExecuteNonQuery (); //devolverá 0 o 1
 			if (filas == 0)
 				Console.WriteLine ("Id no existente. No existe ningún registro con ese Id.");
 		}
 
 		private static string SELECT_SQL = "select * from categoria order by id";
+=======
+			int filas = dbCommand.ExecuteNonQuery ();
+			if (filas == 0) {
+				Console.WriteLine ("No existe ningun registro con ese id");
+			};
+		}
+
+		private static string SELECT_SQL = "select * from categoria";
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 		private static void listar() {
 			IDbCommand dbCommand = dbConnection.CreateCommand ();
 			dbCommand.CommandText = SELECT_SQL;
 			IDataReader dataReader = dbCommand.ExecuteReader ();
+<<<<<<< HEAD
 			Console.WriteLine("{0,5} {1}", "Id", "Nombre");
 			while (dataReader.Read()) 
 				Console.WriteLine ("{0,5} {1}", dataReader ["id"], dataReader ["nombre"]); 
@@ -99,6 +160,13 @@ namespace PCategoria
 				return "Dato duplicado. Ese dato ya existe.";
 			}
 			return ex.Message;
+=======
+			Console.WriteLine ("{0,5} {1}", "Id", "Nombre");
+			while (dataReader.Read()) {
+				Console.WriteLine ("{0,5} {1}", dataReader ["id"], dataReader ["nombre"]);
+			}
+			dataReader.Close();
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 		}
 
 		private static void addParameter(IDbCommand dbCommand, string name, object value) {
@@ -146,4 +214,8 @@ namespace PCategoria
 			}
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6

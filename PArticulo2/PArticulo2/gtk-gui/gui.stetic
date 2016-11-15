@@ -6,9 +6,8 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-<<<<<<< HEAD
-    <widget-library name="../../../Org.InstitutoSerpis.Ad/Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
-    <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
+    <widget-library name="../../../PArticulo/Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
+    <widget-library name="../bin/Debug/PArticulo2.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
     <action-group name="Default">
@@ -22,11 +21,6 @@
         <property name="Label" translatable="yes" />
         <property name="StockId">gtk-edit</property>
       </action>
-      <action id="ArchivoAction">
-        <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Archivo</property>
-        <property name="ShortLabel" translatable="yes">Archivo</property>
-      </action>
       <action id="deleteAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
@@ -39,16 +33,7 @@
       </action>
     </action-group>
     <property name="MemberName" />
-    <property name="Title" translatable="yes">Artículo</property>
-=======
-    <widget-library name="../../Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
-    <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
-  </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
-    <action-group name="Default" />
-    <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
@@ -59,7 +44,6 @@
           <widget class="Gtk.Toolbar" id="toolbar1">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-<<<<<<< HEAD
             <node name="toolbar1" type="Toolbar">
               <node type="Toolitem" action="newAction" />
               <node type="Toolitem" action="editAction" />
@@ -68,9 +52,6 @@
               <node type="Separator" />
               <node type="Toolitem" action="refreshAction" />
             </node>
-=======
-            <node name="__gtksharp_102_Stetic_Editor_ActionToolbar" type="Toolbar" />
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -84,7 +65,7 @@
             <property name="MemberName" />
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.TreeView" id="treeView">
+              <widget class="Gtk.TreeView" id="treeview1">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
@@ -102,8 +83,7 @@
       </widget>
     </child>
   </widget>
-<<<<<<< HEAD
-  <widget class="Gtk.Window" id="PArticulo.ArticuloView" design-size="431 157">
+  <widget class="Gtk.Window" id="PArticulo2.ArticuloView" design-size="400 157">
     <action-group name="Default">
       <action id="saveAction">
         <property name="Type">Action</property>
@@ -122,7 +102,7 @@
           <widget class="Gtk.Toolbar" id="toolbar1">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="toolbar1" type="Toolbar">
+            <node name="__gtksharp_76_Stetic_Editor_ActionToolbar" type="Toolbar">
               <node type="Toolitem" action="saveAction" />
             </node>
           </widget>
@@ -134,7 +114,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Table" id="table1">
+          <widget class="Gtk.Table" id="table2">
             <property name="MemberName" />
             <property name="NRows">3</property>
             <property name="NColumns">2</property>
@@ -143,7 +123,7 @@
             <child>
               <widget class="Gtk.ComboBox" id="comboBoxCategoria">
                 <property name="MemberName" />
-                <property name="IsTextCombo">False</property>
+                <property name="IsTextCombo">True</property>
                 <property name="Items" translatable="yes" />
               </widget>
               <packing>
@@ -183,7 +163,7 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.HBox" id="hbox1">
+              <widget class="Gtk.HBox" id="hbox3">
                 <property name="MemberName" />
                 <property name="Spacing">6</property>
                 <child>
@@ -228,7 +208,6 @@
             <child>
               <widget class="Gtk.Label" id="label1">
                 <property name="MemberName" />
-                <property name="Xalign">1</property>
                 <property name="LabelProp" translatable="yes">Nombre</property>
               </widget>
               <packing>
@@ -246,7 +225,6 @@
             <child>
               <widget class="Gtk.Label" id="label2">
                 <property name="MemberName" />
-                <property name="Xalign">1</property>
                 <property name="LabelProp" translatable="yes">Precio</property>
               </widget>
               <packing>
@@ -266,8 +244,7 @@
             <child>
               <widget class="Gtk.Label" id="label3">
                 <property name="MemberName" />
-                <property name="Xalign">1</property>
-                <property name="LabelProp" translatable="yes">Categoría</property>
+                <property name="LabelProp" translatable="yes">Categoria</property>
               </widget>
               <packing>
                 <property name="TopAttach">2</property>
@@ -297,6 +274,4 @@
       </widget>
     </child>
   </widget>
-=======
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 </stetic-interface>
