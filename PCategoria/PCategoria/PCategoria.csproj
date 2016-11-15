@@ -5,11 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
     <ProjectGuid>{114F8E0B-DA2D-4468-A834-201D951382B1}</ProjectGuid>
-=======
-    <ProjectGuid>{37EA778D-EA46-445E-AA4C-6FC0BCCB105C}</ProjectGuid>
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
     <OutputType>Exe</OutputType>
     <RootNamespace>PCategoria</RootNamespace>
     <AssemblyName>PCategoria</AssemblyName>
@@ -36,17 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-<<<<<<< HEAD
     <Reference Include="System.Data" />
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
     </Reference>
-=======
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

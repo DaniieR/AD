@@ -5,11 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
     <ProjectGuid>{BD616C74-5239-44FA-8C87-27F47A6F9098}</ProjectGuid>
-=======
-    <ProjectGuid>{26B72141-2D62-48E4-B93C-B5019F90C0CE}</ProjectGuid>
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
     <OutputType>WinExe</OutputType>
     <RootNamespace>PArticulo</RootNamespace>
     <AssemblyName>PArticulo</AssemblyName>
@@ -61,16 +57,13 @@
       <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
-<<<<<<< HEAD
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\usr\lib\cli\MySql.Data-6.4\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
     <Reference Include="Org.InstitutoSerpis.Ad">
       <HintPath>..\..\Org.InstitutoSerpis.Ad\Org.InstitutoSerpis.Ad\bin\Debug\Org.InstitutoSerpis.Ad.dll</HintPath>
     </Reference>
-=======
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -83,7 +76,6 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="Articulo.cs" />
     <Compile Include="ArticuloView.cs" />
     <Compile Include="gtk-gui\PArticulo.ArticuloView.cs" />
@@ -92,14 +84,4 @@
     <Compile Include="CategoriaDao.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-=======
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\Org.InstitutoSerpis.Ad\Org.InstitutoSerpis.Ad.csproj">
-      <Project>{21521688-4C09-404C-9E98-0EFC249E6415}</Project>
-      <Name>Org.InstitutoSerpis.Ad</Name>
-    </ProjectReference>
-  </ItemGroup>
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 </Project>

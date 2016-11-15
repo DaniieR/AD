@@ -6,9 +6,8 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-<<<<<<< HEAD
-    <widget-library name="../../../Org.InstitutoSerpis.Ad/Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
     <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
+    <widget-library name="../../../Org.InstitutoSerpis.Ad/Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
     <action-group name="Default">
@@ -40,15 +39,6 @@
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Artículo</property>
-=======
-    <widget-library name="../../Org.InstitutoSerpis.Ad/bin/Debug/Org.InstitutoSerpis.Ad.dll" />
-    <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
-  </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
-    <action-group name="Default" />
-    <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
@@ -59,7 +49,6 @@
           <widget class="Gtk.Toolbar" id="toolbar1">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-<<<<<<< HEAD
             <node name="toolbar1" type="Toolbar">
               <node type="Toolitem" action="newAction" />
               <node type="Toolitem" action="editAction" />
@@ -68,9 +57,6 @@
               <node type="Separator" />
               <node type="Toolitem" action="refreshAction" />
             </node>
-=======
-            <node name="__gtksharp_102_Stetic_Editor_ActionToolbar" type="Toolbar" />
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -102,7 +88,6 @@
       </widget>
     </child>
   </widget>
-<<<<<<< HEAD
   <widget class="Gtk.Window" id="PArticulo.ArticuloView" design-size="431 157">
     <action-group name="Default">
       <action id="saveAction">
@@ -297,6 +282,4 @@
       </widget>
     </child>
   </widget>
-=======
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 </stetic-interface>

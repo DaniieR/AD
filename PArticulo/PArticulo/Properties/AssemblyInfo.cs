@@ -8,11 +8,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("")]
-<<<<<<< HEAD
 [assembly: AssemblyCopyright ("luisvelasco")]
-=======
-[assembly: AssemblyCopyright ("mati")]
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".

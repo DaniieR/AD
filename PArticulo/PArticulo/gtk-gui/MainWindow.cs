@@ -3,14 +3,11 @@
 public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
-<<<<<<< HEAD
 	private global::Gtk.Action newAction;
 	private global::Gtk.Action editAction;
 	private global::Gtk.Action ArchivoAction;
 	private global::Gtk.Action deleteAction;
 	private global::Gtk.Action refreshAction;
-=======
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 	private global::Gtk.VBox vbox1;
 	private global::Gtk.Toolbar toolbar1;
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
@@ -22,7 +19,6 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-<<<<<<< HEAD
 		this.newAction = new global::Gtk.Action ("newAction", null, null, "gtk-new");
 		w1.Add (this.newAction, null);
 		this.editAction = new global::Gtk.Action ("editAction", null, null, "gtk-edit");
@@ -38,23 +34,13 @@ public partial class MainWindow
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Artículo");
-=======
-		this.UIManager.InsertActionGroup (w1, 0);
-		this.AddAccelGroup (this.UIManager.AccelGroup);
-		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-<<<<<<< HEAD
 		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='newAction' action='newAction'/><toolitem name='editAction' action='editAction'/><separator/><toolitem name='deleteAction' action='deleteAction'/><separator/><toolitem name='refreshAction' action='refreshAction'/></toolbar></ui>");
-=======
-		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'/></ui>");
->>>>>>> 7efccaf48b7ec54963797cd75834b9891da0dac6
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
