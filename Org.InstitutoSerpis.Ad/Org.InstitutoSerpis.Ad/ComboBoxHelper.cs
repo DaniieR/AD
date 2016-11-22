@@ -7,25 +7,33 @@ namespace Org.InstitutoSerpis.Ad
 {
 	public class ComboBoxHelper
 	{
-		public static void Fill(ComboBox comboBox, IList list, string propertyName) {
+		public static void Fill(ComboBox comboBox, IList list, string propertyName, object id) {
 			Type listType = list.GetType ();
 			Type elementType = listType.GetGenericArguments () [0];
+			PropertyInfo idPropertyInfo = elementType.GetProperty ("Id");
 			PropertyInfo propertyInfo = elementType.GetProperty (propertyName);
+
 			ListStore listStore = new ListStore (typeof(object));
 			TreeIter initialTreeIter = listStore.AppendValues (Null.Value);
-			foreach (object item in list)
-				listStore.AppendValues (item);
+
+			foreach (object item in list) {
+				TreeIter treeIter = listStore.AppendValues (item);
+				// if item,id =id -> initialTreeIter = treeIter;
+				if (idPropertyInfo.GetValue(item, null).Equals(id))
+					initialTreeIter = treeIter;
+			}
+
 			comboBox.Model = listStore;
 			comboBox.SetActiveIter (initialTreeIter);
 			CellRendererText cellRendererText = new CellRendererText ();
 			comboBox.PackStart (cellRendererText, false);
 			comboBox.SetCellDataFunc (cellRendererText, 
-				delegate(CellLayout cell_layout, CellRenderer cell, TreeModel tree_model, TreeIter iter) {
-					object item = tree_model.GetValue(iter, 0);
-					object value = item == Null.Value ? 
-						"<sin asignar>" : propertyInfo.GetValue(item, null);
-					cellRendererText.Text = value.ToString();
-				}
+			                          delegate(CellLayout cell_layout, CellRenderer cell, TreeModel tree_model, TreeIter iter) {
+				object item = tree_model.GetValue(iter, 0);
+				object value = item == Null.Value ? 
+					"<sin asignar>" : propertyInfo.GetValue(item, null);
+				cellRendererText.Text = value.ToString();
+			}
 			);
 		}
 
@@ -37,5 +45,6 @@ namespace Org.InstitutoSerpis.Ad
 				item.GetType ().GetProperty ("Id").GetValue (item, null);
 		}
 	}
+
 }
 
