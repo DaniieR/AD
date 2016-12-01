@@ -1,0 +1,26 @@
+package org.institutoserpis.org;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ArticuloDAO {
+
+	public static void main(String[] args) throws SQLException {
+	//public static void main(String[] args) {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/dbprueba", "root", "sistemas");
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM articulo");
+		while (resultSet.next()){
+			System.out.printf("     id=%5d\n", resultSet.getObject("id"));
+			System.out.printf("     nombre=%s\n", resultSet.getObject("nombre"));
+			//System.out.printf("     id=%5d\n", resultSet.getObject("id"));
+		}
+		statement.close();
+		connection.close();
+		System.out.println("fin");
+	}
+
+}

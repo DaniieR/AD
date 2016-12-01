@@ -1,0 +1,22 @@
+package org.institutoserpis.org;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ArticuloDAO {
+
+	public static void main(String[] args) throws SQLException {
+	//public static void main(String[] args) {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/dbprueba", "root", "sistemas");
+		Statement statement = connection.createStatement();
+		ResultSet resulset = statement.executeQuery("SELECT * FROM articulo");
+		//TODO procesar resultSet
+		statement.close();
+		connection.close();
+		System.out.println("fin");
+	}
+
+}
