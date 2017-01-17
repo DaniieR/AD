@@ -1,0 +1,10 @@
+package org.institutoserpis.org;
+
+public class ArticuloDao {
+
+	public static void main(String[] args) {
+		EntityManagerFactory entityManagerFactory = Persistance.createEntityManagerFactory("org.institutoserpis.ad.hmysql");
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package org.institutoserpis.org;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Hibernate {
+
+	public static void main(String[] args) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("org.institutoserpis.ad.hmysql");
+		entityManagerFactory.close();
+	}
+
+}

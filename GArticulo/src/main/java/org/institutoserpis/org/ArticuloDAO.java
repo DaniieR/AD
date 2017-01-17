@@ -24,10 +24,6 @@ import org.hamcrest.SelfDescribing;
 public class ArticuloDAO {
 	public static void main(String[] args) throws SQLException {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/dbprueba", "root", "sistemas");
-			//PreparedStatement preparedStatement = connection.prepareStatement("Select * from articulo where id > ?");
-			//preparedStatement.setObject(1, Long.parseLong(args[0]));
-			//ResultSet resultSet = preparedStatement.executeQuery();
-			//preparedStatement.close();
 			Scanner sc = new Scanner(System.in);
 			int opcion;
 			do {
